@@ -9,12 +9,12 @@ console.log("l'utente ha scelto il numero " + numeroUtente);
 
 
 // Tramite una funzione facciamo generare un numero casule da 1 a 5 dal pc
-function generaNumRandom(){
-    const numeroGenerato = Math.floor(Math.random() * 5) + 1;
+function generaNumRandomRange(numMax, numMin) {
+    const numeroGenerato = Math.floor(Math.random() * (numMax - numMin + 1)) + numMin;
 
     return numeroGenerato
 }
-const numeroPc = generaNumRandom();
+let numeroPc = generaNumRandomRange(5, 1);
 console.log("numero del pc e " + numeroPc);
 
 // Sommiamo i due numeri
@@ -28,7 +28,7 @@ function pariODispari(numero) {
     let risultato;
 
     if (numero % 2 === 0) {
-        risultato = "pari"
+        risultato = "pari";
         
     } else {
         risultato = "dispari";
